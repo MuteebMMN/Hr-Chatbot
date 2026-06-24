@@ -1,6 +1,8 @@
 # HR Policy Assistant - RAG Chatbot
 
 An intelligent **Retrieval-Augmented Generation (RAG)** chatbot that allows employees to ask natural language questions about company HR policies and receive accurate, context-aware answers from uploaded policy documents.
+<img width="1919" height="835" alt="image" src="https://github.com/user-attachments/assets/5a5512d0-32ba-4194-9c64-c8ea546096dc" />
+
 
 ## Overview
 
@@ -12,6 +14,8 @@ Instead of searching through hundreds of pages, employees can simply ask questio
 - "What is the work from home policy?"
 - "How is overtime calculated?"
 - "What is the notice period?"
+
+  <img width="1908" height="827" alt="image" src="https://github.com/user-attachments/assets/ada999be-b70c-4e2f-862a-fbabdf781b23" />
 
 
 The system retrieves the relevant policy chunks and generates answers grounded in the uploaded documents.
