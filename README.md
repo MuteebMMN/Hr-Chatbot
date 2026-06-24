@@ -1,22 +1,117 @@
-🤖 Enterprise HR Support Agent (RAG)
-An intelligent, production-ready HR assistant built with LangChain and Python. This tool streamlines internal corporate communications by providing instant, accurate answers from company policy documents, employee handbooks, and legal FAQs.
+# HR Policy Assistant - RAG Chatbot
 
-💼 Business Value
-Time Efficiency: Reduces HR manual query handling by 2-3 hours daily.
+An intelligent **Retrieval-Augmented Generation (RAG)** chatbot that allows employees to ask natural language questions about company HR policies and receive accurate, context-aware answers from uploaded policy documents.
 
-Operational Savings: Provides a high-ROI alternative to manual support, valued at $2k–$8k for enterprise implementation.
+## Overview
 
-Accuracy: Eliminates "hallucinations" by grounding every response in verified internal documentation.
+HR policies are often lengthy and difficult to navigate. This project uses a **RAG (Retrieval-Augmented Generation)** architecture to retrieve the most relevant policy sections and generate reliable answers using an LLM.
 
-✨ Key Features
-🧠 Contextual Memory – Remembers previous questions for fluid, natural dialogue.
+Instead of searching through hundreds of pages, employees can simply ask questions like:
 
-📖 Verifiable Citations – Every answer includes specific source names and page numbers (e.g., Employee Handbook, Page 14).
+- "How many annual leave days do I get?"
+- "What is the work from home policy?"
+- "How is overtime calculated?"
+- "What is the notice period?"
 
-📊 Confidence Scoring – Built-in indicator to show how closely the answer matches the source data.
 
-🛡️ Smart Fallback – Automatically redirects users to human HR staff when documentation is insufficient.
+The system retrieves the relevant policy chunks and generates answers grounded in the uploaded documents.
 
-📥 History Export – One-click download of the entire chat history in PDF or TXT format.
+##  Features
 
-🎨 White-Label UI – Professional, company-branded interface with custom logos and styling.
+- Upload HR policy PDF documents
+- Automatic document processing and chunking
+- Vector embeddings for semantic search
+- LLM-powered answer generation
+- Source citation for transparency
+- Modern chatbot interface
+- Fast retrieval using vector similarity search
+- Answers based only on uploaded company policies
+
+---
+
+##  Architecture
+
+```
+                HR Policy PDF
+                      │
+                      ▼
+             Document Processing
+                      │
+                      ▼
+          Text Chunking & Cleaning
+                      │
+                      ▼
+              Embedding Model
+                      │
+                      ▼
+                Vector Database
+                      │
+                      ▼
+User Question ──► Similarity Search
+                      │
+                      ▼
+          Retrieved Relevant Chunks
+                      │
+                      ▼
+                  Large Language Model
+                      │
+                      ▼
+             Context-Aware Response
+```
+
+##  Workflow
+
+### 1. Upload Documents
+
+Users upload HR policy PDF files through the application.
+
+### 2. Process Documents
+
+The system:
+
+- Extracts text
+- Splits content into chunks
+- Generates embeddings
+- Stores embeddings in the vector database
+
+### 3. Ask Questions
+
+Users can ask natural language questions about:
+
+- Leave policies
+- Working hours
+- Benefits
+- Overtime
+- Remote work
+- Attendance
+- Company rules
+- Employee guidelines
+
+### 4. Retrieve Relevant Context
+
+Instead of sending the entire document to the LLM, the system retrieves only the most relevant sections.
+
+### 5. Generate Answer
+
+The LLM generates a response using only the retrieved policy information, reducing hallucinations and improving accuracy.
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|------------|----------------------------|
+| Frontend | Streamlit |
+| Language | Python |
+| Document Processing | PDF Parser |
+| Embeddings | Sentence Transformers / OpenAI Embeddings |
+| Vector Store | ChromaDB / FAISS |
+| LLM | OpenAI / Local LLM |
+| Retrieval | Semantic Similarity Search |
+
+---
+
+
+
+
+# ⭐ If you found this project useful, consider giving it a star!
